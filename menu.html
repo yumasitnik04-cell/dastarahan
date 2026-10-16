@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Меню · Дастархан</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div id="preloader"><div class="pre-orn"><span></span><span></span><span></span></div><div class="pre-text">Меню</div></div>
+<div id="progressBar"></div>
+<div id="cursorGlow"></div>
+<canvas id="particles"></canvas>
+
+<nav>
+  <a href="index.html" class="logo"><div class="logo-mark"><i>◈</i></div> Дастархан</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="menu.html">Меню</a></li>
+    <li><a href="reviews.html">Отзывы</a></li>
+    <li><a href="contacts.html">Контакты</a></li>
+  </ul>
+  <button class="burger"><span></span><span></span><span></span></button>
+</nav>
+
+<section style="padding-top:160px">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Наше меню</span>
+      <h2>Кухня <span class="grad">Дагестана</span></h2>
+      <p>30 блюд национальной кухни и 8 позиций дагестанских вин.</p>
+    </div>
+
+    <div style="max-width:420px;margin:0 auto 40px" class="reveal">
+      <input id="searchInput" type="text" placeholder="Поиск блюда..."
+        style="width:100%;padding:15px 22px;background:rgba(0,0,0,.4);border:1px solid var(--border);
+        border-radius:100px;color:var(--text);font-size:14px;outline:none;transition:.3s">
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter-btn active" data-cat="all">Всё</button>
+      <button class="filter-btn" data-cat="hot">Горячее</button>
+      <button class="filter-btn" data-cat="soup">Супы</button>
+      <button class="filter-btn" data-cat="salad">Салаты</button>
+      <button class="filter-btn" data-cat="bakery">Выпечка</button>
+      <button class="filter-btn" data-cat="dessert">Десерты</button>
+      <button class="filter-btn" data-cat="drink">Напитки</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+
+    <!-- ВИНА -->
+    <div class="wine-section">
+      <div class="section-head reveal">
+        <span class="kicker">Винная карта</span>
+        <h2>Дагестанские <span class="grad">вина</span></h2>
+        <p>Продукция Дербентского винзавода и домашние вина.</p>
+      </div>
+      <div class="wine-grid" id="wineGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- МОДАЛКА -->
+<div class="modal" id="modal">
+  <div class="modal-bg"></div>
+  <div class="modal-card">
+    <button class="close">×</button>
+    <span class="m-emo"></span>
+    <div class="m-cat"></div>
+    <h3></h3>
+    <p class="m-desc"></p>
+    <div class="m-meta">
+      <div><div class="lbl">Цена</div><div class="val m-price"></div></div>
+      <div><div class="lbl">Вес</div><div class="val m-weight"></div></div>
+    </div>
+    <a href="contacts.html" class="btn btn-primary">Забронировать столик</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo" style="margin-bottom:14px"><div class="logo-mark"><i>◈</i></div> Дастархан</a>
+      <p style="margin-top:14px">Ресторан дагестанской кухни в центре города.</p>
+    </div>
+    <div><h4>Навигация</h4>
+      <a href="index.html">Главная</a><a href="menu.html">Меню</a>
+      <a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div><h4>Контакты</h4>
+      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+      <a href="mailto:info@dastarkhan.ru">info@dastarkhan.ru</a>
+    </div>
+    <div><h4>Часы работы</h4>
+      <p>Пн–Чт: 11:00 – 23:00</p>
+      <p>Пт–Вс: 11:00 – 01:00</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Дастархан.</span>
+    <span>Сделано с ♥ к дагестанской кухне</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/menu-data.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

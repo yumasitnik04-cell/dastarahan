@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отзывы · Дастархан</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div id="preloader"><div class="pre-orn"><span></span><span></span><span></span></div><div class="pre-text">Отзывы</div></div>
+<div id="progressBar"></div>
+<div id="cursorGlow"></div>
+<canvas id="particles"></canvas>
+
+<nav>
+  <a href="index.html" class="logo"><div class="logo-mark"><i>◈</i></div> Дастархан</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="menu.html">Меню</a></li>
+    <li><a href="reviews.html">Отзывы</a></li>
+    <li><a href="contacts.html">Контакты</a></li>
+  </ul>
+  <button class="burger"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="reviews-hero">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Обратная связь</span>
+      <h2>Отзывы <span class="grad">гостей</span></h2>
+      <p>Нам важно каждое слово — оставьте и свой отзыв ниже.</p>
+    </div>
+
+    <div class="rating-summary reveal">
+      <div class="item"><div class="num">4.9</div><div class="lbl">Средний балл</div></div>
+      <div class="item"><div class="num">2 340</div><div class="lbl">Отзывов</div></div>
+      <div class="item"><div class="num">98%</div><div class="lbl">Рекомендуют</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="container">
+    <div class="reviews-grid" id="reviewsGrid"></div>
+
+    <form class="review-form reveal" id="reviewForm">
+      <h3>Оставить отзыв</h3>
+      <div class="row">
+        <div class="field">
+          <label>Ваше имя</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label>Оценка</label>
+          <select name="stars" required>
+            <option value="5">★★★★★ — Отлично</option>
+            <option value="4">★★★★☆ — Хорошо</option>
+            <option value="3">★★★☆☆ — Нормально</option>
+            <option value="2">★★☆☆☆ — Плохо</option>
+            <option value="1">★☆☆☆☆ — Ужасно</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Какое блюдо пробовали?</label>
+        <input type="text" name="dish" placeholder="Например: Хинкал даргинский">
+      </div>
+      <div class="field">
+        <label>Ваш отзыв</label>
+        <textarea name="text" required placeholder="Расскажите о впечатлениях..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить отзыв</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo" style="margin-bottom:14px"><div class="logo-mark"><i>◈</i></div> Дастархан</a>
+      <p style="margin-top:14px">Ресторан дагестанской кухни в центре города.</p>
+    </div>
+    <div><h4>Навигация</h4>
+      <a href="index.html">Главная</a><a href="menu.html">Меню</a>
+      <a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div><h4>Контакты</h4>
+      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+      <a href="mailto:info@dastarkhan.ru">info@dastarkhan.ru</a>
+    </div>
+    <div><h4>Часы работы</h4>
+      <p>Пн–Чт: 11:00 – 23:00</p>
+      <p>Пт–Вс: 11:00 – 01:00</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Дастархан.</span>
+    <span>Сделано с ♥ к дагестанской кухне</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/reviews.js"></script>
+</body>
+</html>

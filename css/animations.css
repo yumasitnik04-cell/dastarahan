@@ -1,0 +1,439 @@
+/* =====================================================================
+   ANIMATIONS.CSS — все @keyframes сайта «Дастархан»
+   Структура:
+   1. Вращение и пульсация
+   2. Парение (float)
+   3. Появление и исчезновение
+   4. Мерцание и свечение
+   5. Спецэффекты (shimmer, ripple, glow)
+   6. Утилитарные классы с задержками
+   7. Уважение к prefers-reduced-motion
+   ===================================================================== */
+
+
+/* =====================================================================
+   1. ВРАЩЕНИЕ И ПУЛЬСАЦИЯ
+   ===================================================================== */
+
+/* Полное вращение по часовой стрелке */
+@keyframes spin{
+    from{ transform:rotate(0deg); }
+    to{   transform:rotate(360deg); }
+  }
+  
+  /* Обратное вращение */
+  @keyframes spin-reverse{
+    from{ transform:rotate(360deg); }
+    to{   transform:rotate(0deg); }
+  }
+  
+  /* Пульсация прозрачности — для точек, индикаторов */
+  @keyframes pulse{
+    0%, 100%{ opacity:.4; }
+    50%{      opacity:1; }
+  }
+  
+  /* Пульсация с масштабом — для акцентов */
+  @keyframes pulse-scale{
+    0%, 100%{ transform:scale(1);    opacity:.8; }
+    50%{      transform:scale(1.08); opacity:1; }
+  }
+  
+  /* Мягкое «дыхание» тени */
+  @keyframes pulse-glow{
+    0%, 100%{
+      box-shadow:0 0 20px rgba(217, 164, 65, .3);
+    }
+    50%{
+      box-shadow:0 0 45px rgba(217, 164, 65, .65);
+    }
+  }
+  
+  
+  /* =====================================================================
+     2. ПАРЕНИЕ (FLOAT)
+     ===================================================================== */
+  
+  /* Вертикальное парение */
+  @keyframes float{
+    0%, 100%{ transform:translateY(0); }
+    50%{      transform:translateY(-16px); }
+  }
+  
+  /* Лёгкое парение — для мелких элементов */
+  @keyframes float-soft{
+    0%, 100%{ transform:translateY(0); }
+    50%{      transform:translateY(-8px); }
+  }
+  
+  /* Парение с лёгким покачиванием */
+  @keyframes float-sway{
+    0%, 100%{ transform:translate(0, 0)      rotate(0deg); }
+    25%{      transform:translate(4px, -6px) rotate(2deg); }
+    50%{      transform:translate(0, -10px)  rotate(0deg); }
+    75%{      transform:translate(-4px, -6px) rotate(-2deg); }
+  }
+  
+  
+  /* =====================================================================
+     3. ПОЯВЛЕНИЕ И ИСЧЕЗНОВЕНИЕ
+     ===================================================================== */
+  
+  /* Появление снизу вверх — основной reveal */
+  @keyframes fadeUp{
+    from{
+      opacity:0;
+      transform:translateY(38px);
+    }
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+  
+  /* Появление снизу с меньшей дистанцией */
+  @keyframes fadeUpSoft{
+    from{
+      opacity:0;
+      transform:translateY(18px);
+    }
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+  
+  /* Появление сверху */
+  @keyframes fadeDown{
+    from{
+      opacity:0;
+      transform:translateY(-30px);
+    }
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+  
+  /* Простое появление */
+  @keyframes fadeIn{
+    from{ opacity:0; }
+    to{   opacity:1; }
+  }
+  
+  /* Исчезновение */
+  @keyframes fadeOut{
+    from{ opacity:1; }
+    to{   opacity:0; }
+  }
+  
+  /* Появление с масштабом — для карточек, модалок */
+  @keyframes scaleIn{
+    from{
+      opacity:0;
+      transform:scale(.92);
+    }
+    to{
+      opacity:1;
+      transform:scale(1);
+    }
+  }
+  
+  /* Появление карточек в сетках */
+  @keyframes cardIn{
+    from{
+      opacity:0;
+      transform:translateY(24px) scale(.97);
+    }
+    to{
+      opacity:1;
+      transform:translateY(0) scale(1);
+    }
+  }
+  
+  /* Появление модального окна */
+  @keyframes modalIn{
+    from{
+      opacity:0;
+      transform:translateY(40px) scale(.94);
+    }
+    to{
+      opacity:1;
+      transform:translateY(0) scale(1);
+    }
+  }
+  
+  /* Появление справа */
+  @keyframes slideInRight{
+    from{
+      opacity:0;
+      transform:translateX(60px);
+    }
+    to{
+      opacity:1;
+      transform:translateX(0);
+    }
+  }
+  
+  /* Появление слева */
+  @keyframes slideInLeft{
+    from{
+      opacity:0;
+      transform:translateX(-60px);
+    }
+    to{
+      opacity:1;
+      transform:translateX(0);
+    }
+  }
+  
+  /* Toast — снизу вверх */
+  @keyframes toastIn{
+    from{
+      opacity:0;
+      transform:translateY(100%);
+    }
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+  
+  
+  /* =====================================================================
+     4. МЕРЦАНИЕ И СВЕЧЕНИЕ
+     ===================================================================== */
+  
+  /* Градиентный текст — перелив */
+  @keyframes shimmer{
+    from{ background-position:0% center; }
+    to{   background-position:250% center; }
+  }
+  
+  /* Мерцание точки */
+  @keyframes blink{
+    0%, 100%{ opacity:1; }
+    50%{      opacity:.2; }
+  }
+  
+  /* Плавное свечение текста */
+  @keyframes textGlow{
+    0%, 100%{
+      text-shadow:0 0 10px rgba(217, 164, 65, .4);
+    }
+    50%{
+      text-shadow:0 0 25px rgba(217, 164, 65, .9),
+                  0 0 40px rgba(217, 164, 65, .5);
+    }
+  }
+  
+  /* Мягкое мерцание как у свечи */
+  @keyframes candle{
+    0%, 100%{ opacity:1;    filter:brightness(1); }
+    25%{      opacity:.85;  filter:brightness(1.15); }
+    50%{      opacity:.95;  filter:brightness(.95); }
+    75%{      opacity:.88;  filter:brightness(1.1); }
+  }
+  
+  
+  /* =====================================================================
+     5. СПЕЦЭФФЕКТЫ
+     ===================================================================== */
+  
+  /* Пробегающий блик по кнопке */
+  @keyframes shine{
+    from{ left:-120%; }
+    to{   left:140%; }
+  }
+  
+  /* Круговое свечение — для орбит, тарелок */
+  @keyframes halo{
+    0%, 100%{
+      box-shadow:0 0 40px rgba(217, 164, 65, .25),
+                 0 0 80px rgba(217, 164, 65, .10);
+    }
+    50%{
+      box-shadow:0 0 60px rgba(217, 164, 65, .45),
+                 0 0 120px rgba(217, 164, 65, .20);
+    }
+  }
+  
+  /* Пульс карты — расширяющиеся кольца */
+  @keyframes mapPulse{
+    0%{
+      transform:scale(.8);
+      opacity:.8;
+    }
+    100%{
+      transform:scale(2);
+      opacity:0;
+    }
+  }
+  
+  /* Плавающие частицы */
+  @keyframes drift{
+    0%{
+      transform:translate(0, 0);
+      opacity:0;
+    }
+    20%{ opacity:.6; }
+    80%{ opacity:.6; }
+    100%{
+      transform:translate(30px, -60px);
+      opacity:0;
+    }
+  }
+  
+  /* Волнистое движение */
+  @keyframes wave{
+    0%, 100%{ transform:translateX(0)    translateY(0); }
+    25%{      transform:translateX(3px)  translateY(-3px); }
+    50%{      transform:translateX(0)    translateY(-6px); }
+    75%{      transform:translateX(-3px) translateY(-3px); }
+  }
+  
+  /* Покачивание иконки */
+  @keyframes wiggle{
+    0%, 100%{ transform:rotate(0deg); }
+    25%{      transform:rotate(-4deg); }
+    75%{      transform:rotate(4deg); }
+  }
+  
+  /* Прыжок */
+  @keyframes bounce{
+    0%, 100%{
+      transform:translateY(0);
+      animation-timing-function:cubic-bezier(.8, 0, 1, 1);
+    }
+    50%{
+      transform:translateY(-14px);
+      animation-timing-function:cubic-bezier(0, 0, .2, 1);
+    }
+  }
+  
+  /* Увеличение с вращением — для эмодзи блюд при hover */
+  @keyframes popRotate{
+    0%{   transform:scale(1)   rotate(0deg); }
+    50%{  transform:scale(1.2) rotate(6deg); }
+    100%{ transform:scale(1.15) rotate(8deg); }
+  }
+  
+  /* Прорисовка подчёркивания слева направо */
+  @keyframes drawLine{
+    from{ transform:scaleX(0); }
+    to{   transform:scaleX(1); }
+  }
+  
+  /* Заполнение полосы прогресса (для рейтингов) */
+  @keyframes fillBar{
+    from{ width:0; }
+    to{   width:var(--target-width, 100%); }
+  }
+  
+  /* Печатающийся курсор */
+  @keyframes caret{
+    50%{ opacity:0; }
+  }
+  
+  
+  /* =====================================================================
+     6. УТИЛИТАРНЫЕ КЛАССЫ С ЗАДЕРЖКАМИ
+     ===================================================================== */
+  
+  /* Классы для быстрого применения анимации */
+  .anim-spin       { animation:spin 20s linear infinite; }
+  .anim-float      { animation:float 5s ease-in-out infinite; }
+  .anim-float-soft { animation:float-soft 4s ease-in-out infinite; }
+  .anim-pulse      { animation:pulse 2s ease-in-out infinite; }
+  .anim-blink      { animation:blink 1.6s ease-in-out infinite; }
+  .anim-bounce     { animation:bounce 2s ease-in-out infinite; }
+  .anim-wiggle     { animation:wiggle 2.4s ease-in-out infinite; }
+  .anim-halo       { animation:halo 4s ease-in-out infinite; }
+  .anim-candle     { animation:candle 3s ease-in-out infinite; }
+  
+  /* Задержки появления (для каскада) */
+  .delay-1{ animation-delay:.1s; }
+  .delay-2{ animation-delay:.2s; }
+  .delay-3{ animation-delay:.3s; }
+  .delay-4{ animation-delay:.4s; }
+  .delay-5{ animation-delay:.5s; }
+  .delay-6{ animation-delay:.6s; }
+  .delay-7{ animation-delay:.7s; }
+  .delay-8{ animation-delay:.8s; }
+  
+  /* Длительности */
+  .duration-fast   { animation-duration:.6s; }
+  .duration-normal { animation-duration:1s; }
+  .duration-slow   { animation-duration:2s; }
+  .duration-slower { animation-duration:4s; }
+  
+  /* Бесконечное повторение */
+  .infinite{ animation-iteration-count:infinite; }
+  
+  /* Заполнение до начала/после анимации */
+  .fill-both     { animation-fill-mode:both; }
+  .fill-forward  { animation-fill-mode:forwards; }
+  .fill-backward { animation-fill-mode:backwards; }
+  
+  /* Пауза / возобновление */
+  .anim-paused  { animation-play-state:paused; }
+  .anim-running { animation-play-state:running; }
+  
+  /* Плавные переходы для интерактива */
+  .transition-fast   { transition:.25s var(--ease); }
+  .transition-normal { transition:.45s var(--ease); }
+  .transition-slow   { transition:.7s var(--ease); }
+  
+  /* Hover-эффекты — вынесены сюда для переиспользования */
+  .hover-lift{
+    transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+  }
+  .hover-lift:hover{
+    transform:translateY(-6px);
+    box-shadow:0 24px 50px rgba(0, 0, 0, .5);
+  }
+  
+  .hover-glow{
+    transition:box-shadow .45s var(--ease), border-color .45s var(--ease);
+  }
+  .hover-glow:hover{
+    border-color:var(--gold);
+    box-shadow:0 0 30px rgba(217, 164, 65, .35);
+  }
+  
+  .hover-rotate{
+    transition:transform .5s var(--ease);
+  }
+  .hover-rotate:hover{
+    transform:rotate(-6deg) scale(1.08);
+  }
+  
+  
+  /* =====================================================================
+     7. УВАЖЕНИЕ К PREFERS-REDUCED-MOTION
+     ===================================================================== */
+  @media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+      animation-duration:.001ms !important;
+      animation-iteration-count:1 !important;
+      animation-delay:0ms !important;
+      transition-duration:.001ms !important;
+      transition-delay:0ms !important;
+      scroll-behavior:auto !important;
+    }
+  
+    /* Отключаем бесконечные декоративные анимации */
+    .anim-spin,
+    .anim-float,
+    .anim-float-soft,
+    .anim-pulse,
+    .anim-blink,
+    .anim-bounce,
+    .anim-wiggle,
+    .anim-halo,
+    .anim-candle{
+      animation:none;
+    }
+  }

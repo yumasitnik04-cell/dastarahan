@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты · Дастархан</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div id="preloader"><div class="pre-orn"><span></span><span></span><span></span></div><div class="pre-text">Контакты</div></div>
+<div id="progressBar"></div>
+<div id="cursorGlow"></div>
+<canvas id="particles"></canvas>
+
+<nav>
+  <a href="index.html" class="logo"><div class="logo-mark"><i>◈</i></div> Дастархан</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="menu.html">Меню</a></li>
+    <li><a href="reviews.html">Отзывы</a></li>
+    <li><a href="contacts.html">Контакты</a></li>
+  </ul>
+  <button class="burger"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="contacts-hero">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Как нас найти</span>
+      <h2>Контакты и <span class="grad">бронирование</span></h2>
+      <p>Забронируйте стол по телефону или через форму — мы подтвердим в течение 15 минут.</p>
+    </div>
+
+    <div class="contacts-grid">
+      <div class="contact-card reveal">
+        <h3>Контактная информация</h3>
+        <ul class="contact-list">
+          <li><div class="ico">📍</div><div><b>Адрес</b>г. Махачкала, пр. Расула Гамзатова, 45</div></li>
+          <li><div class="ico">📞</div><div><b>Телефон</b><a href="tel:+70000000000">+7 (000) 000-00-00</a></div></li>
+          <li><div class="ico">✉️</div><div><b>Email</b><a href="mailto:info@dastarkhan.ru">info@dastarkhan.ru</a></div></li>
+          <li><div class="ico">🕐</div><div><b>Часы работы</b>Пн–Чт: 11:00 – 23:00<br>Пт–Вс: 11:00 – 01:00</div></li>
+          <li><div class="ico">🎉</div><div><b>Банкеты</b>До 80 человек. Отдельный зал.</div></li>
+          <li><div class="ico">🚗</div><div><b>Парковка</b>Бесплатная, на 20 мест</div></li>
+        </ul>
+      </div>
+
+      <div class="map-wrap reveal">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=47.4800%2C42.9600%2C47.5300%2C42.9900&amp;layer=mapnik&amp;marker=42.9767%2C47.5046"
+          loading="lazy"></iframe>
+        <div class="map-overlay">
+          <div class="info">
+            <b>Дастархан · ресторан дагестанской кухни</b>
+            <span>г. Махачкала, пр. Расула Гамзатова, 45</span>
+          </div>
+          <a href="https://www.openstreetmap.org/?mlat=42.9767&mlon=47.5046#map=16/42.9767/47.5046"
+             target="_blank" rel="noopener" class="btn btn-ghost" style="padding:11px 22px;font-size:12px">
+             Открыть карту →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <form class="booking-form reveal" id="bookingForm">
+      <h3 style="color:var(--gold-light);margin-bottom:26px;text-align:center;font-size:1.4rem">
+        Забронировать стол
+      </h3>
+      <div class="row">
+        <div class="field">
+          <label>Имя</label>
+          <input type="text" name="name" required placeholder="Как к вам обращаться?">
+        </div>
+        <div class="field">
+          <label>Телефон</label>
+          <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Дата</label>
+          <input type="date" name="date" id="dateInput" required>
+        </div>
+        <div class="field">
+          <label>Время</label>
+          <input type="time" name="time" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Гостей</label>
+          <select name="guests" required>
+            <option value="1">1</option><option value="2" selected>2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5-6">5-6</option><option value="7+">7 и более</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Зал</label>
+          <select name="hall">
+            <option>Основной зал</option>
+            <option>Банкетный зал</option>
+            <option>Веранда</option>
+          </select>
+        </div>
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label>Пожелания</label>
+        <textarea name="notes" placeholder="День рождения, аллергии, особые просьбы..."></textarea>
+      </div>
+      <div class="submit-row">
+        <button type="submit" class="btn btn-primary">Забронировать →</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo" style="margin-bottom:14px"><div class="logo-mark"><i>◈</i></div> Дастархан</a>
+      <p style="margin-top:14px">Ресторан дагестанской кухни в центре города.</p>
+    </div>
+    <div><h4>Навигация</h4>
+      <a href="index.html">Главная</a><a href="menu.html">Меню</a>
+      <a href="reviews.html">Отзывы</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div><h4>Контакты</h4>
+      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+      <a href="mailto:info@dastarkhan.ru">info@dastarkhan.ru</a>
+    </div>
+    <div><h4>Часы работы</h4>
+      <p>Пн–Чт: 11:00 – 23:00</p>
+      <p>Пт–Вс: 11:00 – 01:00</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Дастархан.</span>
+    <span>Сделано с ♥ к дагестанской кухне</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/contacts.js"></script>
+</body>
+</html>
